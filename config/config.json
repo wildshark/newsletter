@@ -12,7 +12,7 @@
         "encryption":"true",
         "connection":"sql",
         "sqlite":{
-            "dbname":"data.db"
+            "dbname":"news_letter.db"
         },
         "payment":{
             "PublicKey":"84ad7a28b0bdb01e5fce3b8154f62d1b",

@@ -49,6 +49,7 @@ if(!file_exists("config/config.json")){
                     if(!isset($_REQUEST['_admin'])){
                         if(!isset($_REQUEST['_client'])){
                             session_destroy();
+                            $data = news::fetch($conn);
                             require("template/page/home.php");
                             exit;
                         }else{
