@@ -1,0 +1,10 @@
+<?xml version='1.0'?>  
+<tokens>
+   <flutterwave>
+        <PublicKey>84ad7a28b0bdb01e5fce3b8154f62d1b</PublicKey>
+        <PraviteKey>08cf45b3f6d36e0edb8f093d556bc91b</PraviteKey>
+   </flutterwave>
+   <sms>
+        <token></token>
+   </sms>
+</tokens>

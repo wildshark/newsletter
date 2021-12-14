@@ -1,0 +1,8 @@
+<?xml version='1.0'?>  
+<connection>
+    <host>localhost</host>
+    <user>root</user>
+    <pwd>Null</pwd>
+    <dbn>1688</dbn>
+    <port>3066</port>
+</connection>

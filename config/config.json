@@ -1,0 +1,28 @@
+{
+    "application":"qframework",
+    "version":"1.0.0.1",
+    "developer":"iQuipe Digital",
+    "language":"en",
+    "license":{
+        "key":"",
+        "signature":""
+    },
+    "config":{
+        "model":"offline",
+        "encryption":"true",
+        "connection":"sql",
+        "sqlite":{
+            "dbname":"data.db"
+        },
+        "payment":{
+            "PublicKey":"84ad7a28b0bdb01e5fce3b8154f62d1b",
+            "PraviteKey":"08cf45b3f6d36e0edb8f093d556bc91b"
+        },
+        "sms":{
+            "username":"",
+            "password":"",
+            "key":"",
+            "token":""
+        }
+    }
+}

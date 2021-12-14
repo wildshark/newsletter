@@ -1,0 +1,6 @@
+<?xml version='1.0'?>  
+<shell>
+    <stage>http://localhost/equilibrium/?</stage>
+    <producation>http://mdata37.herokuapp.com/api/?</producation>
+    <live>https://api.qshark.ml/church/?</live>
+</shell>
