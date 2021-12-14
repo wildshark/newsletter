@@ -18,6 +18,11 @@ if(!file_exists("config/config.json")){
 }else{
     $_CONFIG = json_decode(file_get_contents("config/config.json"),TRUE);
     $SYSTEM = $_CONFIG['config'];
+
+    /*module*/
+    include("module/modular/user.php");
+    include("module/modular/news.php");
+    //include("module/user.php");
    
     /*function*/
     include("control/db.php");
@@ -25,11 +30,6 @@ if(!file_exists("config/config.json")){
     include("control/control.php");
     include("control/function.php");
     include("control/template.php");
-
-    /*module*/
-    //include("module/modules/admin.php");
-    //include("module/client.php");
-    //include("module/user.php");
 
     if(!$_SESSION['auth']) {
         header('location:index.php');
@@ -43,13 +43,13 @@ if(!file_exists("config/config.json")){
             /*payment gateway*/
             //$f_prakey = FlutterwaveToken($SYSTEM,"pravite");
             //$f_pubkey = FlutterwaveToken($SYSTEM,"public");
-            $get_country = getClientCountry($ip);
+            //$get_country = getClientCountry($ip);
             if(!isset($_REQUEST['_submit'])){
                 if(!isset($_REQUEST['page'])){
                     if(!isset($_REQUEST['_admin'])){
                         if(!isset($_REQUEST['_client'])){
                             session_destroy();
-                            require("template/home.php");
+                            require("template/page/home.php");
                             exit;
                         }else{
                             require("module/client.navigation.php");
