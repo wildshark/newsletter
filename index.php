@@ -21,7 +21,7 @@ if(!file_exists("config/config.json")){
 
     /*module*/
     include("module/modular/user.php");
-    include("module/modular/news.php");
+    include("module/modular/article.php");
     //include("module/user.php");
    
     /*function*/
@@ -49,7 +49,7 @@ if(!file_exists("config/config.json")){
                     if(!isset($_REQUEST['_admin'])){
                         if(!isset($_REQUEST['_client'])){
                             session_destroy();
-                            $data = news::fetch($conn);
+                            $data = article::fetch($conn);
                             require("template/page/home.php");
                             exit;
                         }else{

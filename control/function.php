@@ -44,35 +44,64 @@ function FlutterwaveToken($key,$type){
     }
 }
 
+function articles($data){
+
+    if((!isset($data))||($data == false)){
+        echo"";
+    }else{
+        foreach($data as $r){
+            if(!isset($n)){
+                $n = 1;
+            }else{
+                $n = $n + 1;
+            }
+            echo"
+                <tr>
+                    <td>{$n}</td>
+                    <td>{$r['clock']}</td>
+                    <td>{$r['title']}</td>
+                    <td>{$r['dept']}</td>
+                </tr>
+            ";
+        }
+    }
+
+}
+
 function datasheet($data){
 
     if((!isset($data))||($data == false)){
         echo"";
     }else{
         foreach($data as $r){
+            $id = $r['news_id']; 
             $title = $r['title'];
-            $content = $r[''];
+            $date = $r['clock'];
+            $content = $r['news'];
+            $dept = $r['dept'];
+
+            if(!isset($r['image'])){
+                $img = "article-img-01.jpg";
+            }
             echo"
                 <table border='0' cellspacing='0' cellspacing='' summary='' width='100%' align='center'>
                     <tr>
                     <td class='column sectionArticleImage' valign='top'>
-                        <img src='article-img-18.jpg' width='150' alt='' />
+                        <img src='{$img}' width='150' alt='' />
                     </td>
                     <td class='column' valign='top'>
                         <table border='0' cellpadding='0' cellspacing='0' summary=''>
                         <tr><td class='sectionContentTitle' valign='top'>{$title}</td></tr>
-                        <tr><td class='sectionContentSubTitle' valign='top'>Lorem ipsum: Sed eleifend</td></tr>
+                        <tr><td class='sectionContentSubTitle' valign='top'>Date: {$date} | School: {$dept}</td></tr>
                         <tr>
                             <td class='sectionContent' valign='top'>
-                            Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                            Vestibulum lectus leo, placerat ut odio tincidunt, mattis
-                            rhoncus ligula. Morbi vitae sollicitudin ligula.
+                                {$content}
                             </td>
                         </tr>
                         <tr>
                             <td class='buttonContainer'>
                             <table border='0' cellpadding='0' cellspacing='0' summary='' width='50%'>
-                                <tr><td class='button'><a href='#' title='Lorem ipsum'>Lorem ipsum</a></td></tr>
+                                <tr><td class='button'><a href='?page=news&id={$id}' title='Lorem ipsum'>read more</a></td></tr>
                             </table>
                             </td>
                         </tr>
