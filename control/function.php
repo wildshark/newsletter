@@ -86,9 +86,9 @@ function datasheet($data){
             echo"
                 <table border='0' cellspacing='0' cellspacing='' summary='' width='100%' align='center'>
                     <tr>
-                    <td class='column sectionArticleImage' valign='top'>
+                    <!--td class='column sectionArticleImage' valign='top'>
                         <img src='{$img}' width='150' alt='' />
-                    </td>
+                    </td-->
                     <td class='column' valign='top'>
                         <table border='0' cellpadding='0' cellspacing='0' summary=''>
                         <tr><td class='sectionContentTitle' valign='top'>{$title}</td></tr>

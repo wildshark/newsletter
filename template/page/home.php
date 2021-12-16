@@ -165,7 +165,7 @@
                   <a href="#" title="Lorem">Lorem</a>
                 </td>
                 <td class="footNotes" align="center">
-                  <a href="#" title="Dolor">Dolor</a>
+                  <a href="?page=admin" title="Dolor">Admin</a>
                 </td>
               </tr>
             </table>
