@@ -43,9 +43,12 @@ if(!isset($_REQUEST["_submit"])){
                 if(false == article::add($conn,$q)){
                     $url['_admin'] ="dashboard";
                     $url['token'] = $_SESSION['token'];
+                    $url['err'] = 100;
+
                 }else{
-                    $url['_admin'] ="article";
+                    $url['_admin'] ="dashboard";
                     $url['token'] = $_SESSION['token'];
+                    $url['err'] = 200;
                 }
             }
 
