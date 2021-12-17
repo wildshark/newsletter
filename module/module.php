@@ -40,18 +40,24 @@ if(!isset($_REQUEST["_submit"])){
                 $q[] = $_REQUEST['article'];
                 $q[] = $_REQUEST['dept'];
                 $q[] = "active";
-                if(false == article::add($conn,$q)){
-                    $url['_admin'] ="dashboard";
-                    $url['token'] = $_SESSION['token'];
-                    $url['err'] = 100;
-
-                }else{
-                    $url['_admin'] ="dashboard";
-                    $url['token'] = $_SESSION['token'];
-                    $url['err'] = 200;
-                }
+                $response = article::add($conn,$q);
+            }elseif($_action ==="update"){
+                $q[] = $_REQUEST['title'];
+                $q[] = $_REQUEST['article'];
+                $q[] = $_REQUEST['dept'];
+                $q[] = "active";
+                $q[] = $_SESSION['acticle_id'];
+                $response = article::update($conn,$q);
             }
-
+            if(false === $response){
+                $url['_admin'] ="dashboard";
+                $url['token'] = $_SESSION['token'];
+                $url['err'] = 100;
+            }else{
+                $url['_admin'] ="dashboard";
+                $url['token'] = $_SESSION['token'];
+                $url['err'] = 200;
+            }
         break;
     }
 }

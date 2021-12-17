@@ -109,7 +109,7 @@
               <tr>
                 <td class="logoContainer" align="center">
                   <a href="/" title="Lorem logo">
-                    <img class="logo" src="book-logo.png" alt="Lorem logo" />
+                    <img class="logo" src="page-logo.png" alt="Lorem logo" />
                   </a>
                 </td>
               </tr>
@@ -124,7 +124,14 @@
         <tr><td class="whitespace" height="10">&nbsp;</td></tr>
         <tr>
           <td class="emailContainer" valign="top">
-            <?=datasheet($data)?>
+            <?php 
+            if(!isset($_GET['id'])){
+              echo datasheet($data);
+            }else{
+              echo setrow($data);
+            }
+              
+            ?>
           </td>
         </tr>
         <tr><td class="whitespace" height="20">&nbsp;</td></tr>

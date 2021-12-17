@@ -61,6 +61,10 @@ function articles($data){
                     <td>{$r['clock']}</td>
                     <td>{$r['title']}</td>
                     <td>{$r['dept']}</td>
+                    <td>
+                        <a href='?_admin=article&token={$_SESSION['token']}&id={$r['news_id']}' class=''>Edit</a>
+                        <a href='?_submit=delete&id={$r['news_id']}' class=''>Delete</a>
+                    </td>
                 </tr>
             ";
         }
@@ -91,20 +95,20 @@ function datasheet($data){
                     </td-->
                     <td class='column' valign='top'>
                         <table border='0' cellpadding='0' cellspacing='0' summary=''>
-                        <tr><td class='sectionContentTitle' valign='top'>{$title}</td></tr>
-                        <tr><td class='sectionContentSubTitle' valign='top'>Date: {$date} | School: {$dept}</td></tr>
-                        <tr>
-                            <td class='sectionContent' valign='top'>
-                                {$content}
-                            </td>
-                        </tr>
-                        <tr>
-                            <td class='buttonContainer'>
-                            <table border='0' cellpadding='0' cellspacing='0' summary='' width='50%'>
-                                <tr><td class='button'><a href='?page=news&id={$id}' title='Lorem ipsum'>read more</a></td></tr>
-                            </table>
-                            </td>
-                        </tr>
+                            <tr><td class='sectionContentTitle' valign='top'>{$title}</td></tr>
+                            <tr><td class='sectionContentSubTitle' valign='top'>Date: {$date} | School: {$dept}</td></tr>
+                            <tr>
+                                <td class='sectionContent' valign='top'>
+                                    {$content}
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class='buttonContainer'>
+                                <table border='0' cellpadding='0' cellspacing='0' summary='' width='50%'>
+                                    <tr><td class='button'><a href='?page=news&id={$id}' title='Lorem ipsum'>read more</a></td></tr>
+                                </table>
+                                </td>
+                            </tr>
                         </table>
                     </td>
                     </tr>
@@ -114,6 +118,38 @@ function datasheet($data){
 
         }
     }
+}
+function setrow($r){
+    $id = $r['news_id']; 
+            $title = $r['title'];
+            $date = $r['clock'];
+            $content = $r['news'];
+            $dept = $r['dept'];
+
+            if(!isset($r['image'])){
+                $img = "article-img-01.jpg";
+            }
+            echo"
+                <table border='0' cellspacing='0' cellspacing='' summary='' width='100%' align='center'>
+                    <tr>
+                    <!--td class='column sectionArticleImage' valign='top'>
+                        <img src='{$img}' width='150' alt='' />
+                    </td-->
+                    <td class='column' valign='top'>
+                        <table border='0' cellpadding='0' cellspacing='0' summary=''>
+                            <tr><td class='sectionContentTitle' valign='top'>{$title}</td></tr>
+                            <tr><td class='sectionContentSubTitle' valign='top'>Date: {$date} | School: {$dept}</td></tr>
+                            <tr>
+                                <td class='sectionContent' valign='top'>
+                                    {$content}
+                                </td>
+                            </tr>
+                        </table>
+                    </td>
+                    </tr>
+                    <tr><td class='whitespace' height='20'>&nbsp;</td></tr>
+                </table>
+            ";
 }
 
 ?>
